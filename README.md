@@ -381,6 +381,9 @@ Capture dans le dépôt sous le nom : ping.pcapng
     systemctl start isc-dhcp-server
 #
     systemctl enable isc-dhcp-server
+
+## 🌞 Récupérer une IP automatiquement depuis les 3 nodes
+
 ## Sur chaque node :
     nano /etc/network/interfaces
 ## Contenu :
@@ -404,5 +407,52 @@ Capture dans le dépôt sous le nom : ping.pcapng
     #       netmask 255.255.255.0
     #       gateway 192.168.1.1
     #       dns-nameservers 192.168.1.1
+#
+    root@debian:/home/debian# systemctl restart networking.service ; sudo ifup ens4
+## node1.tp1.efrei :
+    root@debian:/home/debian# ip a
+    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+        inet 127.0.0.1/8 scope host lo
+           valid_lft forever preferred_lft forever
+        inet6 ::1/128 scope host noprefixroute
+           valid_lft forever preferred_lft forever
+    2: ens4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+        link/ether 0c:27:16:58:00:00 brd ff:ff:ff:ff:ff:ff
+        altname enp0s4
+        inet 10.1.1.10/24 brd 10.1.1.255 scope global dynamic ens4
+           valid_lft 349sec preferred_lft 349sec
+        inet6 fe80::e27:16ff:fe58:0/64 scope link
+           valid_lft forever preferred_lft forever
+## node2.tp1.efrei :
+    root@debian:/home/debian# ip a
+    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+        inet 127.0.0.1/8 scope host lo
+           valid_lft forever preferred_lft forever
+        inet6 ::1/128 scope host noprefixroute
+           valid_lft forever preferred_lft forever
+    2: ens4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+        link/ether 0c:63:17:a9:00:00 brd ff:ff:ff:ff:ff:ff
+        altname enp0s4
+        inet 10.1.1.11/24 brd 10.1.1.255 scope global dynamic ens4
+           valid_lft 587sec preferred_lft 587sec
+        inet6 fe80::e63:17ff:fea9:0/64 scope link
+           valid_lft forever preferred_lft forever
+## node3.tp1.efrei
+    root@debian:/home/debian# ip a
+    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+        inet 127.0.0.1/8 scope host lo
+           valid_lft forever preferred_lft forever
+        inet6 ::1/128 scope host noprefixroute
+           valid_lft forever preferred_lft forever
+    2: ens4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+        link/ether 0c:2e:fa:f3:00:00 brd ff:ff:ff:ff:ff:ff
+        altname enp0s4
+        inet 10.1.1.12/24 brd 10.1.1.255 scope global dynamic ens4
+           valid_lft 598sec preferred_lft 598sec
+        inet6 fe80::e2e:faff:fef3:0/64 scope link
+           valid_lft forever preferred_lft forever
 
 
