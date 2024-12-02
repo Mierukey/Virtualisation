@@ -455,4 +455,10 @@ Capture dans le dépôt sous le nom : ping.pcapng
         inet6 fe80::e2e:faff:fef3:0/64 scope link
            valid_lft forever preferred_lft forever
 
+## 🌞 Wireshark !
+
+## La capture est sous le nom : dhcp.pcapng
+
+## 🌞 Configurez dnsmasq
+
 
