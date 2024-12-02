@@ -347,4 +347,62 @@ Capture dans le dépôt sous le nom : ping.pcapng
 
 ## 🌞 Donner un accès Internet à la machine dhcp.tp1.efrei
 
-    
+    root@debian:/home/debian# ping 8.8.8.8
+    PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+    64 bytes from 8.8.8.8: icmp_seq=1 ttl=113 time=165 ms
+    64 bytes from 8.8.8.8: icmp_seq=2 ttl=113 time=38.8 ms
+    64 bytes from 8.8.8.8: icmp_seq=3 ttl=113 time=81.4 ms
+    ^C
+    --- 8.8.8.8 ping statistics ---
+    3 packets transmitted, 3 received, 0% packet loss, time 2005ms
+    rtt min/avg/max/mdev = 38.830/95.219/165.408/52.588 ms
+
+## 🌞 Installer et configurer un serveur DHCP
+
+    apt update
+#
+    apt install isc-dhcp-server
+#
+    nano /etc/dhcp/dhcpd.conf
+## Contenu :
+    subnet 10.1.1.0 netmask 255.255.255.0 {
+      range 10.1.1.10 10.1.1.50;
+      option routers 10.1.1.100;
+      option domain-name-servers 8.8.8.8, 8.8.4.4;
+      default-lease-time 600;
+      max-lease-time 7200;
+    }
+#
+    nano /etc/default/isc-dhcp-server
+## Contenu :
+    INTERFACESv4="ens4"
+    INTERFACESv6=""
+#
+    systemctl start isc-dhcp-server
+#
+    systemctl enable isc-dhcp-server
+## Sur chaque node :
+    nano /etc/network/interfaces
+## Contenu :
+    # This file describes the network interfaces available on your system
+    # and how to activate them. For more information, see interfaces(5).
+
+    source /etc/network/interfaces.d/*
+
+    # The loopback network interface
+    auto lo
+    iface lo inet loopback
+
+    # DHCP config for ens4
+    auto ens4
+    iface ens4 inet dhcp
+
+    # Static config for ens4
+    #auto ens4
+    #iface ens4 inet static
+    #       address 192.168.1.100
+    #       netmask 255.255.255.0
+    #       gateway 192.168.1.1
+    #       dns-nameservers 192.168.1.1
+
+
