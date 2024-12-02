@@ -5,6 +5,7 @@
     ip a
 
 node1.tp1.efrei : 0c:50:c9:16:00:00
+ 
 node2.tp1.efrei : 0c:da:49:4e:00:00
 
 
