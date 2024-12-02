@@ -1,13 +1,16 @@
 # Virtualisation : TP1
 
+## 🌞 Déterminer l'adresse MAC de vos deux machines
+       
+    ip a
 
-## Récupérer les adresses MAC :
- 
-Je les ai récupéré sur les 2 machines Debian avec la commande : ip a
+node1.tp1.efrei : 0c:50:c9:16:00:00
+node2.tp1.efrei : 0c:da:49:4e:00:00
 
-Ce qui m'a donné : "0c:50:c9:16:00:00" et "0c:da:49:4e:00:00"
 
-## Mettre une IP fixe :
+
+
+
  
 j'ai modifié le fichier /etc/network/interfaces en y mettant :
 
