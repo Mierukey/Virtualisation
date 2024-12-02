@@ -143,3 +143,51 @@ Capture dans le dépôt sous le nom : ping.pcapng
 # II - Ajoutons un switch
  
 ## 🌞 Déterminer l'adresse MAC de vos trois machines
+
+## node1.tp1.efrei
+    root@debian:/home/debian# ip a
+    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+        inet 127.0.0.1/8 scope host lo
+           valid_lft forever preferred_lft forever
+        inet6 ::1/128 scope host noprefixroute
+           valid_lft forever preferred_lft forever
+    2: ens4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+        link/ether 0c:da:49:4e:00:00 brd ff:ff:ff:ff:ff:ff
+        altname enp0s4
+        inet 10.1.1.1/24 brd 10.1.1.255 scope global ens4
+           valid_lft forever preferred_lft forever
+        inet6 fe80::eda:49ff:fe4e:0/64 scope link
+           valid_lft forever preferred_lft forever
+
+## node2.tp1.efrei
+    root@debian:/home/debian# ip a
+    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+        inet 127.0.0.1/8 scope host lo
+           valid_lft forever preferred_lft forever
+        inet6 ::1/128 scope host noprefixroute
+           valid_lft forever preferred_lft forever
+    2: ens4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+        link/ether 0c:50:c9:16:00:00 brd ff:ff:ff:ff:ff:ff
+        altname enp0s4
+        inet 10.1.1.2/24 brd 10.1.1.255 scope global ens4
+           valid_lft forever preferred_lft forever
+        inet6 fe80::e50:c9ff:fe16:0/64 scope link
+           valid_lft forever preferred_lft forever
+
+## node3.tp1.efrei
+    root@debian:/home/debian# ip a
+    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+        inet 127.0.0.1/8 scope host lo
+           valid_lft forever preferred_lft forever
+        inet6 ::1/128 scope host noprefixroute
+           valid_lft forever preferred_lft forever
+    2: ens4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+        link/ether 0c:1b:a0:0a:00:00 brd ff:ff:ff:ff:ff:ff
+        altname enp0s4
+        inet 10.1.1.3/24 brd 10.1.1.255 scope global ens4
+           valid_lft forever preferred_lft forever
+        inet6 fe80::e1b:a0ff:fe0a:0/64 scope link
+           valid_lft forever preferred_lft forever
