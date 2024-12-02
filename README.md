@@ -1,4 +1,4 @@
-## Virtualisation : TP1
+# Virtualisation : TP1
 
 Récupérer les adresses MAC :
 
@@ -10,15 +10,15 @@ Mettre une IP fixe :
 
 j'ai modifié le fichier /etc/network/interfaces en y mettant :
 
-# and how to activate them. For more information, see interfaces(5).
+#and how to activate them. For more information, see interfaces(5).
 
 source /etc/network/interfaces.d/*
 
-# The loopback network interface
+#The loopback network interface
 auto lo
 iface lo inet loopback
 
-# DHCP config for ens4
+#DHCP config for ens4
 #auto ens4
 #iface ens4 inet dhcp
 
