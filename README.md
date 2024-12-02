@@ -1,4 +1,4 @@
-# Virtualisation : TP1
+# I - Most simplest LAN
 
 ## 🌞 Déterminer l'adresse MAC de vos deux machines
        
@@ -131,4 +131,15 @@
     rtt min/avg/max/mdev = 1.562/3.953/7.826/2.763 ms
 
 ## 🌞 Wireshark !
-    a
+Protocole utilisé pour le ping : ICMP
+ 
+Capture dans le dépôt sous le nom : ping.pcapng
+
+## 🌞 ARP
+    root@debian:/home/debian# ip neigh
+    10.1.1.2 dev ens4 lladdr 0c:50:c9:16:00:00 STALE
+    10.1.1.100 dev ens4 INCOMPLETE
+
+# II - Ajoutons un switch
+ 
+## 🌞 Déterminer l'adresse MAC de vos trois machines
