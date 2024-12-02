@@ -343,3 +343,8 @@ Capture dans le dépôt sous le nom : ping.pcapng
     3 packets transmitted, 3 received, 0% packet loss, time 2005ms
     rtt min/avg/max/mdev = 1.731/8.344/21.417/9.243 ms
 
+# III - Serveur DHCP
+
+## 🌞 Donner un accès Internet à la machine dhcp.tp1.efrei
+
+    
