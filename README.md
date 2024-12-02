@@ -359,11 +359,11 @@ Capture dans le dépôt sous le nom : ping.pcapng
 
 ## 🌞 Installer et configurer un serveur DHCP
 
-    apt update
+    root@debian:/home/debian# apt update
 #
-    apt install isc-dhcp-server
+    root@debian:/home/debian# apt install isc-dhcp-server
 #
-    nano /etc/dhcp/dhcpd.conf
+    root@debian:/home/debian# nano /etc/dhcp/dhcpd.conf
 ## Contenu :
     subnet 10.1.1.0 netmask 255.255.255.0 {
       range 10.1.1.10 10.1.1.50;
@@ -373,19 +373,19 @@ Capture dans le dépôt sous le nom : ping.pcapng
       max-lease-time 7200;
     }
 #
-    nano /etc/default/isc-dhcp-server
+    root@debian:/home/debian# nano /etc/default/isc-dhcp-server
 ## Contenu :
     INTERFACESv4="ens4"
     INTERFACESv6=""
 #
-    systemctl start isc-dhcp-server
+    root@debian:/home/debian# systemctl start isc-dhcp-server
 #
-    systemctl enable isc-dhcp-server
+    root@debian:/home/debian# systemctl enable isc-dhcp-server
 
 ## 🌞 Récupérer une IP automatiquement depuis les 3 nodes
 
 ## Sur chaque node :
-    nano /etc/network/interfaces
+    root@debian:/home/debian# nano /etc/network/interfaces
 ## Contenu :
     # This file describes the network interfaces available on your system
     # and how to activate them. For more information, see interfaces(5).
@@ -461,4 +461,31 @@ Capture dans le dépôt sous le nom : ping.pcapng
 
 ## 🌞 Configurez dnsmasq
 
-
+    root@debian:/home/debian# apt install dnsmasq
+#
+    root@debian:/home/debian# nano /etc/dnsmasq.conf
+## Contenu :
+    dhcp-authoritative
+    # Plage DHCP
+    dhcp-range=10.1.1.210,10.1.1.250,12h
+    # Netmask
+    dhcp-option=1,255.255.255.0
+    # Route
+    dhcp-option=3,192.168.1.1
+#
+    root@debian:/home/debian# /etc/init.d/dnsmasq restart
+## 🌞 Test !
+    root@debian:/home/debian# ip a
+    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+        inet 127.0.0.1/8 scope host lo
+           valid_lft forever preferred_lft forever
+        inet6 ::1/128 scope host noprefixroute
+           valid_lft forever preferred_lft forever
+    2: ens4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+        link/ether 0c:27:16:58:00:00 brd ff:ff:ff:ff:ff:ff
+        altname enp0s4
+        inet 10.1.1.219/24 brd 10.1.1.255 scope global dynamic ens4
+           valid_lft 43133sec preferred_lft 43133sec
+        inet6 fe80::e27:16ff:fe58:0/64 scope link
+           valid_lft forever preferred_lft forever
