@@ -545,6 +545,8 @@ Capture dans le dépôt sous le nom : ping.pcapng
 ## Capture sous le nom : race.pcapng
 
 # BONUS : DHCP starvation
+    apt update
+#
     apt install dhcpstarv
 #
     root@debian:/home/debian# dhcpstarv -i ens4
