@@ -457,7 +457,7 @@ Capture dans le dépôt sous le nom : ping.pcapng
 
 ## 🌞 Wireshark !
 
-## La capture est sous le nom : dhcp.pcapng
+La capture est sous le nom : dhcp.pcapng
 
 ## 🌞 Configurez dnsmasq
 
@@ -542,7 +542,7 @@ Capture dans le dépôt sous le nom : ping.pcapng
 
 ## 🌞 Wireshark !
 
-## Capture sous le nom : race.pcapng
+Capture sous le nom : race.pcapng
 
 # BONUS : DHCP starvation
     apt update
