@@ -544,3 +544,86 @@ Capture dans le dépôt sous le nom : ping.pcapng
 
 ## Capture sous le nom : race.pcapng
 
+# BONUS : DHCP starvation
+    root@debian:/home/debian# dhcpstarv -i ens4
+    [   76.025833] device ens4 entered promiscuous mode
+    11:28:14 12/03/24: no renewal time option in DHCPOFFER
+    11:28:14 12/03/24: got address 10.1.1.19 for 00:16:36:51:e9:0b from 10.1.1.253
+    11:28:15 12/03/24: no renewal time option in DHCPOFFER
+    11:28:15 12/03/24: got address 10.1.1.20 for 00:16:36:d6:34:f3 from 10.1.1.253
+    11:28:16 12/03/24: no renewal time option in DHCPOFFER
+    11:28:16 12/03/24: got address 10.1.1.21 for 00:16:36:4a:14:65 from 10.1.1.253
+    11:28:17 12/03/24: no renewal time option in DHCPOFFER
+    11:28:17 12/03/24: got address 10.1.1.22 for 00:16:36:30:36:01 from 10.1.1.253
+    11:28:18 12/03/24: no renewal time option in DHCPOFFER
+    11:28:18 12/03/24: got address 10.1.1.23 for 00:16:36:b3:5a:56 from 10.1.1.253
+    11:28:19 12/03/24: no renewal time option in DHCPOFFER
+    11:28:19 12/03/24: got address 10.1.1.24 for 00:16:36:21:e4:ff from 10.1.1.253
+    11:28:20 12/03/24: no renewal time option in DHCPOFFER
+    11:28:20 12/03/24: got address 10.1.1.25 for 00:16:36:f0:3d:36 from 10.1.1.253
+    11:28:21 12/03/24: no renewal time option in DHCPOFFER
+    11:28:21 12/03/24: got address 10.1.1.26 for 00:16:36:fc:67:98 from 10.1.1.253
+    11:28:22 12/03/24: no renewal time option in DHCPOFFER
+    11:28:22 12/03/24: got address 10.1.1.27 for 00:16:36:a6:83:53 from 10.1.1.253
+    11:28:23 12/03/24: no renewal time option in DHCPOFFER
+    11:28:23 12/03/24: got address 10.1.1.28 for 00:16:36:55:63:12 from 10.1.1.253
+    11:28:24 12/03/24: no renewal time option in DHCPOFFER
+    11:28:24 12/03/24: got address 10.1.1.29 for 00:16:36:de:07:fd from 10.1.1.253
+    11:28:25 12/03/24: no renewal time option in DHCPOFFER
+    11:28:25 12/03/24: got address 10.1.1.30 for 00:16:36:17:17:28 from 10.1.1.253
+    11:28:26 12/03/24: no renewal time option in DHCPOFFER
+    11:28:26 12/03/24: got address 10.1.1.31 for 00:16:36:10:09:81 from 10.1.1.253
+    11:28:27 12/03/24: no renewal time option in DHCPOFFER
+    11:28:27 12/03/24: got address 10.1.1.32 for 00:16:36:72:40:79 from 10.1.1.253
+    11:28:28 12/03/24: no renewal time option in DHCPOFFER
+    11:28:28 12/03/24: got address 10.1.1.33 for 00:16:36:b2:d0:11 from 10.1.1.253
+    11:28:29 12/03/24: no renewal time option in DHCPOFFER
+    11:28:29 12/03/24: got address 10.1.1.34 for 00:16:36:96:84:d6 from 10.1.1.253
+    11:28:30 12/03/24: no renewal time option in DHCPOFFER
+    11:28:30 12/03/24: got address 10.1.1.35 for 00:16:36:6a:bd:ae from 10.1.1.253
+    11:28:31 12/03/24: no renewal time option in DHCPOFFER
+    11:28:31 12/03/24: got address 10.1.1.36 for 00:16:36:2a:75:a8 from 10.1.1.253
+    11:28:32 12/03/24: no renewal time option in DHCPOFFER
+    11:28:32 12/03/24: got address 10.1.1.37 for 00:16:36:e6:89:04 from 10.1.1.253
+    11:28:33 12/03/24: no renewal time option in DHCPOFFER
+    11:28:33 12/03/24: got address 10.1.1.38 for 00:16:36:2f:a1:49 from 10.1.1.253
+    11:28:34 12/03/24: no renewal time option in DHCPOFFER
+    11:28:34 12/03/24: got address 10.1.1.39 for 00:16:36:c2:61:59 from 10.1.1.253
+    11:28:35 12/03/24: no renewal time option in DHCPOFFER
+    11:28:35 12/03/24: got address 10.1.1.40 for 00:16:36:90:99:10 from 10.1.1.253
+    11:28:36 12/03/24: no renewal time option in DHCPOFFER
+    11:28:36 12/03/24: got address 10.1.1.41 for 00:16:36:aa:a3:45 from 10.1.1.253
+    11:28:38 12/03/24: no renewal time option in DHCPOFFER
+    11:28:38 12/03/24: got address 10.1.1.42 for 00:16:36:00:93:e7 from 10.1.1.253
+    11:28:39 12/03/24: no renewal time option in DHCPOFFER
+    11:28:39 12/03/24: got address 10.1.1.43 for 00:16:36:02:91:cd from 10.1.1.253
+    11:28:40 12/03/24: no renewal time option in DHCPOFFER
+    11:28:40 12/03/24: got address 10.1.1.44 for 00:16:36:ff:a1:0c from 10.1.1.253
+    11:28:41 12/03/24: no renewal time option in DHCPOFFER
+    11:28:41 12/03/24: got address 10.1.1.45 for 00:16:36:81:35:f9 from 10.1.1.253
+    11:28:42 12/03/24: no renewal time option in DHCPOFFER
+    11:28:42 12/03/24: got address 10.1.1.46 for 00:16:36:f2:fd:cb from 10.1.1.253
+    11:28:43 12/03/24: no renewal time option in DHCPOFFER
+    11:28:43 12/03/24: got address 10.1.1.47 for 00:16:36:f3:33:07 from 10.1.1.253
+    11:28:44 12/03/24: no renewal time option in DHCPOFFER
+    11:28:44 12/03/24: got address 10.1.1.48 for 00:16:36:5b:99:6b from 10.1.1.253
+    11:28:45 12/03/24: no renewal time option in DHCPOFFER
+    11:28:45 12/03/24: got address 10.1.1.49 for 00:16:36:18:14:a0 from 10.1.1.253
+    11:28:46 12/03/24: no renewal time option in DHCPOFFER
+    11:28:46 12/03/24: got address 10.1.1.50 for 00:16:36:aa:be:36 from 10.1.1.253
+    11:28:47 12/03/24: no renewal time option in DHCPOFFER
+    11:28:47 12/03/24: got address 10.1.1.14 for 00:16:36:5f:d7:0b from 10.1.1.253
+    11:28:48 12/03/24: no renewal time option in DHCPOFFER
+    11:28:48 12/03/24: got address 10.1.1.10 for 00:16:36:37:a3:62 from 10.1.1.253
+    11:28:49 12/03/24: no renewal time option in DHCPOFFER
+    11:28:49 12/03/24: got address 10.1.1.13 for 00:16:36:2e:df:88 from 10.1.1.253
+    11:28:50 12/03/24: no renewal time option in DHCPOFFER
+    11:28:50 12/03/24: got address 10.1.1.11 for 00:16:36:de:45:6b from 10.1.1.253
+    11:28:51 12/03/24: no renewal time option in DHCPOFFER
+    11:28:51 12/03/24: got address 10.1.1.12 for 00:16:36:b7:c9:f5 from 10.1.1.253
+    11:28:52 12/03/24: no renewal time option in DHCPOFFER
+    11:28:52 12/03/24: got address 10.1.1.15 for 00:16:36:a2:e0:71 from 10.1.1.253
+    11:28:53 12/03/24: no renewal time option in DHCPOFFER
+    11:28:53 12/03/24: got address 10.1.1.16 for 00:16:36:fc:e0:24 from 10.1.1.253
+    11:28:54 12/03/24: no renewal time option in DHCPOFFER
+    11:28:54 12/03/24: got address 10.1.1.17 for 00:16:36:b2:94:d4 from 10.1.1.253
