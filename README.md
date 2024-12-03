@@ -545,6 +545,8 @@ Capture dans le dépôt sous le nom : ping.pcapng
 ## Capture sous le nom : race.pcapng
 
 # BONUS : DHCP starvation
+    apt install dhcpstarv
+#
     root@debian:/home/debian# dhcpstarv -i ens4
     [   76.025833] device ens4 entered promiscuous mode
     11:28:14 12/03/24: no renewal time option in DHCPOFFER
