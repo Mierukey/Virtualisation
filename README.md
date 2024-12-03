@@ -509,4 +509,33 @@ Capture dans le dépôt sous le nom : ping.pcapng
            valid_lft forever preferred_lft forever
 
 ## Essai 2 :
-    
+    root@debian:/home/debian# ip a
+    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default     qlen 1000
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+        inet 127.0.0.1/8 scope host lo
+           valid_lft forever preferred_lft forever
+        inet6 ::1/128 scope host noprefixroute
+           valid_lft forever preferred_lft forever
+    2: ens4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group     default qlen 1000
+        link/ether 0c:15:57:ed:00:00 brd ff:ff:ff:ff:ff:ff
+        altname enp0s4
+        inet 10.1.1.16/24 brd 10.1.1.255 scope global dynamic ens4
+           valid_lft 597sec preferred_lft 597sec
+        inet6 fe80::e15:57ff:feed:0/64 scope link
+           valid_lft forever preferred_lft forever
+
+## Essai 3 :
+    root@debian:/home/debian# ip a
+    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default     qlen 1000
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+        inet 127.0.0.1/8 scope host lo
+           valid_lft forever preferred_lft forever
+        inet6 ::1/128 scope host noprefixroute
+           valid_lft forever preferred_lft forever
+    2: ens4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group     default qlen 1000
+        link/ether 0c:07:b3:92:00:00 brd ff:ff:ff:ff:ff:ff
+        altname enp0s4
+        inet 10.1.1.17/24 brd 10.1.1.255 scope global dynamic ens4
+           valid_lft 546sec preferred_lft 546sec
+        inet6 fe80::e07:b3ff:fe92:0/64 scope link
+           valid_lft forever preferred_lft forever
