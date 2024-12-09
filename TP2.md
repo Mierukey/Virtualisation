@@ -1,4 +1,4 @@
-# I. Routage
+# I - Routage
 
 ## 🌞 Configuration de router.tp2.efrei
 
@@ -69,7 +69,7 @@
        1    0c0a.7200.0001    DYNAMIC     Et0/0
     Total Mac Addresses for this criterion: 2
 
-# II. Serveur DHCP
+# II - Serveur DHCP
 
 ## 🌞 Installation et configuration du serveur DHCP sur dhcp.tp2.efrei
 
@@ -148,5 +148,22 @@
 ## 🌞 Wireshark it !
 
 ### La capture est sous le nom : dchptp2.pcapng
+
+# III - ARP
+
+## 🌞 Affichez la table ARP de router.tp2.efrei
+
+    [rocky@routeurtp2 ~]$ ip neighbor show
+    10.2.1.1 dev eth1 lladdr 00:50:79:66:68:00 STALE
+    192.168.122.1 dev eth0 lladdr 52:54:00:23:04:c2 STALE
+    10.2.1.253 dev eth1 lladdr 0c:f8:d7:6a:00:00 STALE
+
+## 🌞 Capturez l'échange ARP avec Wireshark
+
+### La capture est sous le nom : arp.pcapng
+
+## 🌞 Envoyer une trame ARP arbitraire
+
+
 
 
