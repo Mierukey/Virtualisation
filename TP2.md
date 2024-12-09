@@ -57,3 +57,18 @@
      7     *  *  *
      8     *  *  *
 
+## 🌞 Afficher la CAM Table du switch
+
+    Switch#show mac address-table
+          Mac Address Table
+    -------------------------------------------
+
+    Vlan    Mac Address       Type        Ports
+    ----    -----------       --------    -----
+       1    0050.7966.6800    DYNAMIC     Et0/1
+       1    0c0a.7200.0001    DYNAMIC     Et0/0
+    Total Mac Addresses for this criterion: 2
+
+# II. Serveur DHCP
+
+## 🌞 Install et conf du serveur DHCP sur dhcp.tp2.efrei
