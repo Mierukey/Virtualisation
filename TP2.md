@@ -2,6 +2,28 @@
 
 ## 🌞 Configuration de router.tp2.efrei
 
+    [rocky@routeurtp2 ~]$ sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
+
+### Contenu :
+    DEVICE=eth0
+    NAME=internet
+
+    BOOTPROTO=dhcp
+    ONBOOT=yes
+#
+    [rocky@routeurtp2 ~]$ sudo vi /etc/sysconfig/network-scripts/ifcfg-eth1
+
+### Contenu :
+
+    DEVICE=eth1
+    NAME=lan
+
+    BOOTPROTO=static
+    ONBOOT=yes
+
+    IPADDR=10.2.1.254
+    NETMASK=255.255.255.0
+#
     [rocky@routeurtp2 ~]$ ip a
     1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group defau0
         link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
