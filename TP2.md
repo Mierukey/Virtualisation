@@ -44,4 +44,16 @@
     84 bytes from 8.8.8.8 icmp_seq=2 ttl=112 time=77.570 ms
     ^C
 
+#
+
+    PC1> trace 8.8.8.8
+    trace to 8.8.8.8, 8 hops max, press Ctrl+C to stop
+     1   10.2.1.254   4.231 ms  1.489 ms  0.820 ms
+     2   192.168.122.1   3.116 ms  1.444 ms  1.330 ms
+     3   10.0.3.2   2.491 ms  3.252 ms  1.884 ms
+     4     *  *  *
+     5     *  *  *
+     6     *  *  *
+     7     *  *  *
+     8     *  *  *
 
