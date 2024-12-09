@@ -71,4 +71,57 @@
 
 # II. Serveur DHCP
 
-## 🌞 Install et conf du serveur DHCP sur dhcp.tp2.efrei
+## 🌞 Installation et configuration du serveur DHCP sur dhcp.tp2.efrei
+
+    [rocky@dhcptp2 ~]$ ip a
+    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group defau0
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+        inet 127.0.0.1/8 scope host lo
+           valid_lft forever preferred_lft forever
+        inet6 ::1/128 scope host
+           valid_lft forever preferred_lft forever
+    2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP gro0
+        link/ether 0c:f8:d7:6a:00:00 brd ff:ff:ff:ff:ff:ff
+        altname enp0s3
+        altname ens3
+        inet 10.2.1.253/24 brd 10.2.1.255 scope global noprefixroute eth0
+           valid_lft forever preferred_lft forever
+        inet6 fe80::ef8:d7ff:fe6a:0/64 scope link
+           valid_lft forever preferred_lft forever
+#
+    [rocky@dhcptp2 ~]$ ip route show
+    default via 10.2.1.254 dev eth0 proto static metric 100
+    10.2.1.0/24 dev eth0 proto kernel scope link src 10.2.1.253 metric 100
+#
+    [rocky@dhcptp2 ~]$ ping 8.8.8.8
+    PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+    64 bytes from 8.8.8.8: icmp_seq=1 ttl=112 time=92.8 ms
+    64 bytes from 8.8.8.8: icmp_seq=2 ttl=112 time=88.4 ms
+    64 bytes from 8.8.8.8: icmp_seq=3 ttl=112 time=43.3 ms
+    
+    --- 8.8.8.8 ping statistics ---
+    3 packets transmitted, 3 received, 0% packet loss, time 2009ms
+    rtt min/avg/max/mdev = 43.254/74.819/92.780/22.390 ms
+    
+### Configuration du dhcp :
+
+    [rocky@dhcptp2 ~]$ sudo dnf -y install dhcp-server
+#
+    [rocky@dhcptp2 ~]$ sudo vi /etc/dhcp/dhcpd.conf
+    
+### Contenu :
+
+    # this DHCP server to be declared valid
+    authoritative;
+
+    # specify network address and subnetmask
+    subnet 10.2.1.0 netmask 255.255.255.0 {
+        # specify the range of lease IP address
+        range dynamic-bootp 10.2.1.10 10.2.1.199;
+        # specify broadcast address
+        option broadcast-address 10.2.1.255;
+        # specify gateway
+        option routers 10.2.1.254;
+    }
+
+
