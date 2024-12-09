@@ -124,4 +124,29 @@
         option routers 10.2.1.254;
     }
 
+## 🌞 Test du DHCP sur node1.tp2.efrei
+
+    PC1> dhcp
+    DDORA IP 10.2.1.10/24 GW 10.2.1.254
+
+## 🌟 BONUS
+
+    # this DHCP server to be declared valid
+    authoritative;
+
+    # specify network address and subnetmask
+    subnet 10.2.1.0 netmask 255.255.255.0 {
+        # specify the range of lease IP address
+        range dynamic-bootp 10.2.1.10 10.2.1.199;
+        # specify broadcast address
+        option broadcast-address 10.2.1.255;
+        # specify gateway
+        option routers 10.2.1.254;
+        option domain-name-servers 1.1.1.1;
+    }
+
+## 🌞 Wireshark it !
+
+### La capture est sous le nom : dchptp2.pcapng
+
 
