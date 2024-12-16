@@ -245,5 +245,5 @@ La capture est sous le nom : arp_mitm.pcap
 
     while True:
     
-	    sendp(victime, iface="enp0s3")
-	    sendp(routeur, iface="enp0s3")
+	    sendp(victime, iface="ens4")
+	    sendp(routeur, iface="ens4")
