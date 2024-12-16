@@ -188,7 +188,7 @@ La capture est sous le nom : arp.pcapng
 
     debian@debian:~$ sudo apt install arping
 #
-    debian@debian:~$ sudo arping -s 10.2.1.10 -S 10.2.1.254 10.2.1.11
+    debian@debian:~$ sudo arping 10.2.1.10
     ARPING 10.2.1.10
     58 bytes from 00:50:79:66:68:00 (10.2.1.10): index=0 time=7.364 msec
     58 bytes from 00:50:79:66:68:00 (10.2.1.10): index=1 time=20.459 msec
