@@ -36,3 +36,15 @@ La capture est sous le nom : ping_partie1.pcap
     Internet  10.3.2.1                8   0050.7966.6802  ARPA   FastEthernet1/0
     Internet  10.3.2.254              -   c402.05e1.0010  ARPA   FastEthernet1/0
 
+## 🌞 Prouvez que vous avez déjà un accès internet sur r1
+
+    R1#ping 1.1.1.1
+
+    Type escape sequence to abort.
+    Sending 5, 100-byte ICMP Echos to 1.1.1.1, timeout is 2 seconds:
+    !!!!!
+    Success rate is 100 percent (5/5), round-trip min/avg/max = 88/116/184 ms
+
+## 🌞 Accès internet LAN1
+
+    
