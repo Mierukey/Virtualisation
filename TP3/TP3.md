@@ -47,4 +47,18 @@ La capture est sous le nom : ping_partie1.pcap
 
 ## 🌞 Accès internet LAN1
 
-    
+    pc1.tp3.b2> ping 8.8.8.8
+
+    84 bytes from 8.8.8.8 icmp_seq=1 ttl=111 time=65.656 ms
+    84 bytes from 8.8.8.8 icmp_seq=2 ttl=111 time=49.001 ms
+
+## 🌞 Accès internet LAN2
+
+    pc3.tp3.b2> ping 8.8.8.8
+
+    84 bytes from 8.8.8.8 icmp_seq=1 ttl=110 time=87.788 ms
+    84 bytes from 8.8.8.8 icmp_seq=2 ttl=110 time=54.010 ms
+    84 bytes from 8.8.8.8 icmp_seq=3 ttl=110 time=56.427 ms
+
+# II - Router-on-a-stick
+
