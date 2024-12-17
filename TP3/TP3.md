@@ -62,3 +62,34 @@ La capture est sous le nom : ping_partie1.pcap
 
 # II - Router-on-a-stick
 
+## 🌞 Tests de ping
+
+    PC1> show ip
+
+    NAME        : PC1[1]
+    IP/MASK     : 10.3.1.1/24
+    GATEWAY     : 10.3.1.254
+    DNS         :
+    MAC         : 00:50:79:66:68:00
+    LPORT       : 20018
+    RHOST:PORT  : 127.0.0.1:20019
+    MTU         : 1500
+
+    PC1> ping 10.3.2.1
+
+    84 bytes from 10.3.2.1 icmp_seq=1 ttl=63 time=29.754 ms
+    84 bytes from 10.3.2.1 icmp_seq=2 ttl=63 time=22.250 ms
+    84 bytes from 10.3.2.1 icmp_seq=3 ttl=63 time=13.515 ms
+
+## 🌞 Tests de ping
+
+    R1#ping 8.8.8.8
+
+    Type escape sequence to abort.
+    Sending 5, 100-byte ICMP Echos to 8.8.8.8, timeout is 2 seconds:
+    !!!!!
+    Success rate is 100 percent (5/5), round-trip min/avg/max = 88/108/152 ms
+
+#
+
+
