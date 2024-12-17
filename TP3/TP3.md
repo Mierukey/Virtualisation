@@ -16,3 +16,23 @@ La capture est sous le nom : ping_partie1.pcap
 
 ## 🌞 Afficher les adresses MAC des routeurs
 
+### R1
+
+    R1#show arp
+    Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+    Internet  10.3.12.1               -   c401.05c3.0001  ARPA   FastEthernet0/1
+    Internet  10.3.12.2              17   c402.05e1.0001  ARPA   FastEthernet0/1
+    Internet  10.3.1.1                8   0050.7966.6800  ARPA   FastEthernet1/0
+    Internet  192.168.122.1          11   5254.0023.04c2  ARPA   FastEthernet0/0
+    Internet  192.168.122.190         -   c401.05c3.0000  ARPA   FastEthernet0/0
+    Internet  10.3.1.254              -   c401.05c3.0010  ARPA   FastEthernet1/0
+
+### R2
+
+    R2#show arp
+    Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+    Internet  10.3.12.1              17   c401.05c3.0001  ARPA   FastEthernet0/1
+    Internet  10.3.12.2               -   c402.05e1.0001  ARPA   FastEthernet0/1
+    Internet  10.3.2.1                8   0050.7966.6802  ARPA   FastEthernet1/0
+    Internet  10.3.2.254              -   c402.05e1.0010  ARPA   FastEthernet1/0
+
