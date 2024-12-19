@@ -64,6 +64,8 @@ La capture est sous le nom : ping_partie1.pcap
 
 ## 🌞 Tests de ping
 
+### PC1
+
     PC1> show ip
 
     NAME        : PC1[1]
@@ -83,6 +85,8 @@ La capture est sous le nom : ping_partie1.pcap
 
 ## 🌞 Tests de ping
 
+### R1
+
     R1#ping 8.8.8.8
 
     Type escape sequence to abort.
@@ -90,7 +94,7 @@ La capture est sous le nom : ping_partie1.pcap
     !!!!!
     Success rate is 100 percent (5/5), round-trip min/avg/max = 88/108/152 ms
 
-#
+### PC2
 
     PC2> ping 1.1.1.1
 
@@ -98,7 +102,7 @@ La capture est sous le nom : ping_partie1.pcap
     84 bytes from 1.1.1.1 icmp_seq=2 ttl=52 time=82.458 ms
     84 bytes from 1.1.1.1 icmp_seq=3 ttl=52 time=154.460 ms
 
-#
+### PC3
 
     PC3> ping 1.1.1.1
 
