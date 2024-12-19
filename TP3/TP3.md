@@ -92,4 +92,20 @@ La capture est sous le nom : ping_partie1.pcap
 
 #
 
+    PC2> ping 1.1.1.1
+
+    84 bytes from 1.1.1.1 icmp_seq=1 ttl=52 time=121.057 ms
+    84 bytes from 1.1.1.1 icmp_seq=2 ttl=52 time=82.458 ms
+    84 bytes from 1.1.1.1 icmp_seq=3 ttl=52 time=154.460 ms
+
+#
+
+    PC3> ping 1.1.1.1
+
+    84 bytes from 1.1.1.1 icmp_seq=1 ttl=52 time=85.677 ms
+    84 bytes from 1.1.1.1 icmp_seq=2 ttl=52 time=79.487 ms
+    84 bytes from 1.1.1.1 icmp_seq=3 ttl=52 time=145.795 ms
+
+# III - Services dans le LAN
+
 
