@@ -112,4 +112,28 @@ La capture est sous le nom : ping_partie1.pcap
 
 # III - Services dans le LAN
 
+## 🌞 Prouvez avec un VPCS
+
+    PC4> ip dhcp
+    DORA IP 10.3.2.10/24 GW 10.3.2.254
+
+    PC4> show ip
+
+    NAME        : PC4[1]
+    IP/MASK     : 10.3.2.10/24
+    GATEWAY     : 10.3.2.254
+    DNS         : 1.1.1.1
+    DHCP SERVER : 10.3.2.253
+    DHCP LEASE  : 43125, 43131/21565/37739
+    MAC         : 00:50:79:66:68:03
+    LPORT       : 20019
+    RHOST:PORT  : 127.0.0.1:20020
+    MTU         : 1500
+
+    PC4> ping efrei.fr
+    efrei.fr resolved to 51.255.68.208
+
+    84 bytes from 51.255.68.208 icmp_seq=1 ttl=54 time=40.279 ms
+    84 bytes from 51.255.68.208 icmp_seq=2 ttl=54 time=41.912 ms
+    84 bytes from 51.255.68.208 icmp_seq=3 ttl=54 time=46.313 ms
 
