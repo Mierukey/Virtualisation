@@ -114,6 +114,9 @@ La capture est sous le nom : ping_partie1.pcap
 
 ## 🌞 Prouvez avec un VPCS
 
+    PC4> ip dhcp
+    DORA IP 10.3.2.10/24 GW 10.3.2.254
+
     PC4> show ip
 
     NAME        : PC4[1]
