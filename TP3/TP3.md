@@ -457,4 +457,6 @@ La capture est sous le nom : ping_partie1.pcap
 
       </body>
     </html>
-
+#
+    debian@debian:/etc/network$ curl supersite.tp3.b2
+Sors exactement la même chose
