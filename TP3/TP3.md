@@ -114,26 +114,31 @@ La capture est sous le nom : ping_partie1.pcap
 
 ## 🌞 Prouvez avec un VPCS
 
-    PC4> ip dhcp
-    DORA IP 10.3.2.10/24 GW 10.3.2.254
-
     PC4> show ip
 
     NAME        : PC4[1]
     IP/MASK     : 10.3.2.10/24
     GATEWAY     : 10.3.2.254
-    DNS         : 1.1.1.1
+    DNS         : 10.3.3.1  1.1.1.1
     DHCP SERVER : 10.3.2.253
-    DHCP LEASE  : 43125, 43131/21565/37739
+    DHCP LEASE  : 41342, 41345/20672/36176
     MAC         : 00:50:79:66:68:03
-    LPORT       : 20019
-    RHOST:PORT  : 127.0.0.1:20020
+    LPORT       : 20026
+    RHOST:PORT  : 127.0.0.1:20027
     MTU         : 1500
-
+    
     PC4> ping efrei.fr
     efrei.fr resolved to 51.255.68.208
 
-    84 bytes from 51.255.68.208 icmp_seq=1 ttl=54 time=40.279 ms
-    84 bytes from 51.255.68.208 icmp_seq=2 ttl=54 time=41.912 ms
-    84 bytes from 51.255.68.208 icmp_seq=3 ttl=54 time=46.313 ms
+    84 bytes from 51.255.68.208 icmp_seq=1 ttl=52 time=40.828 ms
+    84 bytes from 51.255.68.208 icmp_seq=2 ttl=52 time=41.031 ms
+    84 bytes from 51.255.68.208 icmp_seq=3 ttl=52 time=39.607 ms
+    84 bytes from 51.255.68.208 icmp_seq=4 ttl=52 time=37.359 ms
+    ^C
+    PC4> ping dns.tp3.b2
+    dns.tp3.b2 resolved to 10.3.3.1
+
+    84 bytes from 10.3.3.1 icmp_seq=1 ttl=63 time=19.730 ms
+    84 bytes from 10.3.3.1 icmp_seq=2 ttl=63 time=16.407 ms
+    84 bytes from 10.3.3.1 icmp_seq=3 ttl=63 time=15.260 ms
 
