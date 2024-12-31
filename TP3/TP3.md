@@ -468,18 +468,18 @@ Sors exactement la même chose
     root@debian:—# dig axfr tp3.b2 -p53 @10.3.3.1 
     ; «» DiG 9.18.28-1—deb12u2-Debian «» axfr tp3.b2 -p53 @10.3.3.1 
     ;; global options: +cmd 
-    tp3.b2.             86400 IN SOA dns.tp3.b2. admin.tp3.b2. 2019061800 3600 1800 604800 86400 
-    tp3.b2.             86400 IN NS  dns.tp3.b2. 
-    coolsite.tp3.b2.    86400 IN A   10.3.3.4 
-    dns.tp3.b2.         86400 IN A   10.3.3.1 
-    meow.tp3.b2.        86400 IN A   10.3.3.6 
-    prout.tp3.b2.       86400 IN A   10.3.3.5 
-    supersite.tp3.b2.   86400 IN A   10.3.3.2 
-    web.tp3.b2.         86400 IN A   10.3.3.2 
-    web2.tp3.b2.        86400 IN A   10.3.3.4 
-    web3.tp3.b2.        86400 IN A   10.3.3.5 
-    web4.tp3.b2.        86400 IN A   10.3.3.6 
-    tp3.b2.             86400 IN SOA dns.tp3.b2. admin.tp3.b2. 2019061800 3600 1800 604800 86400 
+    tp3.b2. 86400 IN SOA dns.tp3.b2. admin.tp3.b2. 2019061800 3600 1800 604800 86400 
+    tp3.b2. 86400 IN NS  dns.tp3.b2. 
+    coolsite.tp3.b2. 86400 IN A   10.3.3.4 
+    dns.tp3.b2. 86400 IN A   10.3.3.1 
+    meow.tp3.b2. 86400 IN A   10.3.3.6 
+    prout.tp3.b2. 86400 IN A   10.3.3.5 
+    supersite.tp3.b2. 86400 IN A   10.3.3.2 
+    web.tp3.b2. 86400 IN A   10.3.3.2 
+    web2.tp3.b2. 86400 IN A   10.3.3.4 
+    web3.tp3.b2. 86400 IN A   10.3.3.5 
+    web4.tp3.b2. 86400 IN A   10.3.3.6 
+    tp3.b2. 86400 IN SOA dns.tp3.b2. admin.tp3.b2. 2019061800 3600 1800 604800 86400 
     ;; Query time: 40 msec 
     ;; SERVER: 10.3.3.1#53(10.3.3.1) (TCP) 
     ;; WHEN: Tue Dec 31 01:39:20 CET 2024 
