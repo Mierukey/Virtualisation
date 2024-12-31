@@ -469,16 +469,16 @@ Sors exactement la même chose
     ; «» DiG 9.18.28-1—deb12u2-Debian «» axfr tp3.b2 -p53 @10.3.3.1 
     ;; global options: +cmd 
     tp3.b2. 86400 IN SOA dns.tp3.b2. admin.tp3.b2. 2019061800 3600 1800 604800 86400 
-    tp3.b2. 86400 IN NS  dns.tp3.b2. 
-    coolsite.tp3.b2. 86400 IN A   10.3.3.4 
-    dns.tp3.b2. 86400 IN A   10.3.3.1 
-    meow.tp3.b2. 86400 IN A   10.3.3.6 
-    prout.tp3.b2. 86400 IN A   10.3.3.5 
-    supersite.tp3.b2. 86400 IN A   10.3.3.2 
-    web.tp3.b2. 86400 IN A   10.3.3.2 
-    web2.tp3.b2. 86400 IN A   10.3.3.4 
-    web3.tp3.b2. 86400 IN A   10.3.3.5 
-    web4.tp3.b2. 86400 IN A   10.3.3.6 
+    tp3.b2. 86400 IN NS dns.tp3.b2. 
+    coolsite.tp3.b2. 86400 IN A 10.3.3.4 
+    dns.tp3.b2. 86400 IN A 10.3.3.1 
+    meow.tp3.b2. 86400 IN A 10.3.3.6 
+    prout.tp3.b2. 86400 IN A 10.3.3.5 
+    supersite.tp3.b2. 86400 IN A 10.3.3.2 
+    web.tp3.b2. 86400 IN A 10.3.3.2 
+    web2.tp3.b2. 86400 IN A 10.3.3.4 
+    web3.tp3.b2. 86400 IN A 10.3.3.5 
+    web4.tp3.b2. 86400 IN A 10.3.3.6 
     tp3.b2. 86400 IN SOA dns.tp3.b2. admin.tp3.b2. 2019061800 3600 1800 604800 86400 
     ;; Query time: 40 msec 
     ;; SERVER: 10.3.3.1#53(10.3.3.1) (TCP) 
@@ -487,3 +487,10 @@ Sors exactement la même chose
 
 ## 🌞 Spoof DNS query
 
+    from scapy.all import *
+    reponse = sr1(IP(dst="10.3.3.1", src="10.3.1.1")/UDP(dport=53)/DNS(rd=1,qd=DNSQR(qname="tp3.b2", qtype="AXFR")),verbose=0)
+    print(reponse[DNS].summary())
+    
+La capture est sous le nom : spoof_dns_query.pcap
+
+## 🌞 Mettre en place une attaque TCP RST
