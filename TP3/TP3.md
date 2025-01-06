@@ -122,7 +122,7 @@ La capture est sous le nom : ping_partie1.pcap
     NAME        : PC4[1]
     IP/MASK     : 10.3.2.10/24
     GATEWAY     : 10.3.2.254
-    DNS         : 10.3.3.1  1.1.1.1
+    DNS         : 10.3.3.1
     DHCP SERVER : 10.3.2.253
     DHCP LEASE  : 41342, 41345/20672/36176
     MAC         : 00:50:79:66:68:03
