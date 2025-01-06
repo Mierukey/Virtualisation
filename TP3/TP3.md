@@ -133,17 +133,17 @@ La capture est sous le nom : ping_partie1.pcap
     PC4> ping efrei.fr
     efrei.fr resolved to 51.255.68.208
 
-    84 bytes from 51.255.68.208 icmp_seq=1 ttl=52 time=40.828 ms
-    84 bytes from 51.255.68.208 icmp_seq=2 ttl=52 time=41.031 ms
-    84 bytes from 51.255.68.208 icmp_seq=3 ttl=52 time=39.607 ms
-    84 bytes from 51.255.68.208 icmp_seq=4 ttl=52 time=37.359 ms
+    84 bytes from 51.255.68.208 icmp_seq=1 ttl=54 time=42.012 ms
+    84 bytes from 51.255.68.208 icmp_seq=2 ttl=54 time=94.450 ms
+    84 bytes from 51.255.68.208 icmp_seq=3 ttl=54 time=44.856 ms
     ^C
     PC4> ping dns.tp3.b2
     dns.tp3.b2 resolved to 10.3.3.1
 
-    84 bytes from 10.3.3.1 icmp_seq=1 ttl=63 time=19.730 ms
-    84 bytes from 10.3.3.1 icmp_seq=2 ttl=63 time=16.407 ms
-    84 bytes from 10.3.3.1 icmp_seq=3 ttl=63 time=15.260 ms
+    84 bytes from 10.3.3.1 icmp_seq=1 ttl=63 time=18.793 ms
+    84 bytes from 10.3.3.1 icmp_seq=2 ttl=63 time=22.373 ms
+    84 bytes from 10.3.3.1 icmp_seq=3 ttl=63 time=17.646 ms
+
 
 ## 🌞 Preuve avec un client (NGINX)
 
